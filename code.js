@@ -50,7 +50,7 @@ for (let i=0;i<container.length;i++)
     // console.log(container[i]);
     container[i].addEventListener("pointerover",function(){      
         let cur_color=this.style.backgroundColor;
-        if(cur_color==""||cur_color=="red")
+        if(cur_color==""||cur_color=="red"||cur_color=="gray")
 
 {
 this.style.backgroundColor="white";
