@@ -8,12 +8,12 @@ h1{
     
 }
 .items{
-    height:80vh;
+/*     height:80vh; */
     width:device-width;
     background:rgb(80, 80, 140);
-    display:flex;
+/*     display:flex;
     align-items:flex-start;
-    justify-content:space-between;
+    justify-content:space-between; */
 }
 button
 {
