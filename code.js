@@ -74,13 +74,13 @@ arr[+x][+y]=1-arr[+x][+y];
 
 const run=document.getElementsByClassName("btn")[0];
 run.addEventListener("click",()=>{
-    const cl=document.getElementByClassName("column");
-    for(let i=0;i<c1.length;i++)
-        {var cur=cl[i].style.backgroundColor;
+    const cL=document.getElementsByClassName("column");
+    for(let i=0;i<cL.length;i++)
+        {var cur=cL[i].style.backgroundColor;
             if(cur=="blue"||cur=="white")
                 continue;
             else
-                cl[i].style.backgroundColor="red";
+                cL[i].style.backgroundColor="red";
         }
     algo_1();
 })
