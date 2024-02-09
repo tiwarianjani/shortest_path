@@ -43,7 +43,10 @@ parent[parent.length-1].appendChild(square);
 // this one is for color change 
 const container=document.getElementsByClassName("column");
 for (let i=0;i<container.length;i++)
-{ 
+{ var x=container[i].getAttribute("data-row");
+    var y=container[i].getAttribute("data-col");
+    if((x==si&&y==sj)||(x==di&&y==dj))
+    continue;
     // console.log(container[i]);
     container[i].addEventListener("pointerover",function(){      
         let cur_color=this.style.backgroundColor;
@@ -147,7 +150,9 @@ var q1=[];
                 let x1=x+p[j];
                 let y1=y+p[j+1];
                 if(x1>=0&&x1<r&&y1>=0&&y1<c&&!vis.has(`${x1}_${y1}`)&&arr[x1][y1]==1)
-                {   
+                {  
+                    var now=document.querySelector(`div[data-row="${x1}"][data-col="${y1}"]`);
+                    now.style.backgroundColor="gray";
                     //add in the queue if not already taken
                     mp.set(`${x1}_${y1}`,`${x}_${y}`);
 
