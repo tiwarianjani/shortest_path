@@ -151,8 +151,9 @@ var q1=[];
                 let y1=y+p[j+1];
                 if(x1>=0&&x1<r&&y1>=0&&y1<c&&!vis.has(`${x1}_${y1}`)&&arr[x1][y1]==1)
                 {  
-                    var now=document.querySelector(`div[data-row="${x1}"][data-col="${y1}"]`);
-                    now.style.backgroundColor="gray";
+                    if(!(x1==di&&y1==dj))   
+                    {var now=document.querySelector(`div[data-row="${x1}"][data-col="${y1}"]`);
+                    now.style.backgroundColor="gray";}
                     //add in the queue if not already taken
                     mp.set(`${x1}_${y1}`,`${x}_${y}`);
 
