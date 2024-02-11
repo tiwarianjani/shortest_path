@@ -180,6 +180,9 @@ var q1=[];
 
     }
 if(check==0)
-alert('No path is possible !!');
+{
+//alert('No path is possible !!');
+    swal('No path is possible !!')
+    console.log("no path")}
 return count;
 }
