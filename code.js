@@ -56,7 +56,7 @@ for (let i=0;i<container.length;i++)
 this.style.backgroundColor="white";
 const x=this.getAttribute("data-row");
 const y=this.getAttribute("data-col");
-arr[+x][+y]=1-arr[+x][+y];
+arr[+x][+y]=0;
 }    
         else
 
@@ -64,7 +64,7 @@ arr[+x][+y]=1-arr[+x][+y];
 this.style.backgroundColor="red";
 const x=this.getAttribute("data-row");
 const y=this.getAttribute("data-col");
-arr[+x][+y]=1-arr[+x][+y];
+arr[+x][+y]=1;
 }
 // console.log(this.style.backgroundColor);
 });
