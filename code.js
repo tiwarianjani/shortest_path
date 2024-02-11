@@ -127,9 +127,10 @@ for(let i=0;i<r;i++)
     }
 }
 }
-let check=0;
+
 function algo_1()
 {
+    let check=0;
 let vis=new Set();// for visited or not
 vis.add(`${si}_${sj}`);
 let mp=new Map();
