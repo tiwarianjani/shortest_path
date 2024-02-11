@@ -113,8 +113,11 @@ function show(mp)
 if(next==`${si}_${sj}`)
 break;
     }
-
-
+}
+//sleep function 
+function sleep(ms)
+{
+    return new Promise(resolve=>setTimeout(resolve,ms));
 }
 
 // algo 1 for finding the shoretest path
@@ -128,7 +131,7 @@ for(let i=0;i<r;i++)
 }
 }
 
-function algo_1()
+async function algo_1()
 {
     let check=0;
 let vis=new Set();// for visited or not
@@ -161,19 +164,15 @@ var q1=[];
                 if(x1>=0&&x1<r&&y1>=0&&y1<c&&!vis.has(`${x1}_${y1}`)&&arr[x1][y1]==1)
                 {  
                     if(!(x1==di&&y1==dj))   
-                    {var now=document.querySelector(`div[data-row="${x1}"][data-col="${y1}"]`);
+                    {
+                        await sleep(10);
+                    var now=document.querySelector(`div[data-row="${x1}"][data-col="${y1}"]`);
                     now.style.backgroundColor="gray";}
                     //add in the queue if not already taken
                     mp.set(`${x1}_${y1}`,`${x}_${y}`);
-
                     q1.push([x1,y1]);
-
                     vis.add(`${x1}_${y1}`);  // make x1 and y1 visited
-                    
-
-                }
-
-              
+                }              
             }
         }
         count++;
