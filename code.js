@@ -1,6 +1,7 @@
-const r=10,c=15;
-const si=0,sj=1,di=8,dj=9;
+const r=18,c=45;
+const si=0,sj=1,di=16,dj=39;
 var arr=[];// this will help to make barrier
+let hover=true;
 for(let i=0;i<r;i++)
 {
     let row=document.createElement("div");
@@ -41,6 +42,9 @@ parent[parent.length-1].appendChild(square);
 }
 
 // this one is for color change 
+
+if(hover)
+{
 const container=document.getElementsByClassName("column");
 for (let i=0;i<container.length;i++)
 { var x=container[i].getAttribute("data-row");
@@ -70,6 +74,7 @@ arr[+x][+y]=1;
 });
 
 }
+}
 // click for run
 
 const run=document.getElementsByClassName("btn")[0];
@@ -82,6 +87,7 @@ run.addEventListener("click",()=>{
             else
                 cL[i].style.backgroundColor="red";
         }
+        // document.style.pointerEvent="none";
     algo_1();
 })
 
@@ -113,6 +119,7 @@ function show(mp)
 if(next==`${si}_${sj}`)
 break;
     }
+    hover=true;
 }
 //sleep function 
 function sleep(ms)
@@ -132,7 +139,7 @@ for(let i=0;i<r;i++)
 }
 
 async function algo_1()
-{
+{ hover=false;
     let check=0;
 let vis=new Set();// for visited or not
 vis.add(`${si}_${sj}`);
@@ -183,6 +190,9 @@ if(check==0)
 {
 alert('No path is possible !!');
    // swal('No path is possible !!')
-    console.log("no path")}
+    console.log("no path")
+    hover=true;
+}
+    
 return count;
 }
